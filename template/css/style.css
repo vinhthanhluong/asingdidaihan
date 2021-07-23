@@ -260,14 +260,6 @@ li {
   text-transform: uppercase;
 }
 
-.modal-open {
-  overflow: hidden;
-  position: relative;
-  -ms-touch-action: none;
-  touch-action: none;
-  -webkit-overflow-scrolling: auto;
-}
-
 *,
 *::before,
 *::after {
@@ -820,6 +812,11 @@ sup {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
   animation: fixedMenu 0.6s;
 }
+@media screen and (max-width: 1199px) {
+  .header.--fix {
+    animation: none;
+  }
+}
 .header.--active {
   z-index: 992;
 }
@@ -1228,6 +1225,7 @@ sup {
     overflow-x: hidden;
     overflow-y: auto;
     height: 400px;
+    padding-left: 0;
   }
 }
 .header-menu-nav a {
@@ -1276,10 +1274,10 @@ sup {
     color: #578A85;
   }
 }
-.header-menu-nav .current-menu a {
+.header-menu-nav > li > a.active {
   color: #578A85;
 }
-.header-menu-nav .current-menu a::before {
+.header-menu-nav > li > a.active::before {
   width: calc(100% - 24px);
 }
 
@@ -3325,33 +3323,79 @@ html .mfp-wrap {
 .projects .container-full {
   padding: 0;
 }
-.projects .projects-wrap .projects-img img {
+.projects .projects-inner {
+  position: relative;
+}
+.projects .projects-inner:hover .projects-img img {
+  filter: none;
+}
+.projects .projects-inner:hover .projects-content {
+  opacity: 1;
+  visibility: visible;
+}
+.projects .projects-inner .projects-img {
+  cursor: pointer;
+}
+.projects .projects-inner .projects-img img {
   width: 100%;
   height: 100%;
   max-width: 100%;
   object-fit: cover;
+  filter: saturate(0%);
+  transition: all 0.3s ease;
 }
-.projects .projects-wrap .projects-content {
-  display: none;
+.projects .projects-inner .projects-content {
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  text-align: right;
+  color: #fff;
+  max-width: 370px;
+  opacity: 0;
+  visibility: hidden;
+}
+.projects .projects-inner .projects-content .projects-date {
+  margin-bottom: 10px;
+  line-height: 1.1666666667;
+}
+.projects .projects-inner .projects-content .projects-tt {
+  line-height: 1.2222222222;
+  text-transform: uppercase;
 }
 .projects .grid {
   border-radius: 0;
+  margin: 0 auto;
+}
+.projects .grid-sizer,
+.projects .grid-item {
+  width: 17%;
+  max-width: 318px;
 }
 .projects .grid-item {
-  width: 318px;
-  height: 318px;
+  height: auto;
   float: left;
   border: none;
   border-radius: 0%;
   background-color: #fff;
 }
 .projects .grid-item--width1 {
-  width: 636px;
+  width: 34%;
+  max-width: 636px;
+}
+.projects .grid-item--width1 .projects-content {
+  bottom: 40px;
+  right: 40px;
+}
+@media screen and (max-width: 1900px) {
+  .projects .grid-item--width1 .projects-content {
+    bottom: 20px;
+    right: 20px;
+  }
 }
 .projects .grid-item--height1 {
-  height: 636px;
+  height: auto;
 }
-
 .achievements {
   padding-top: 110px;
   overflow: hidden;

@@ -1,10 +1,11 @@
 export default function MasonryModule() {
     $('.grid').masonry({
+        percentPosition: true,
         itemSelector: '.grid-item',
-       
-        columnWidth: 318,
+        columnWidth: '.grid-sizer',
 
-        // columnWidth: 320,
         horizontalOrder: false,
+        // isFitWidth: true
+        // fitWidth: true,
     });
 }

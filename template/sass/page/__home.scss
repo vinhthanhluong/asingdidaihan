@@ -130,42 +130,113 @@
         padding: 0;
     }
 
-    .projects-wrap {
+    .projects-inner {
+        position: relative;
+
+        &:hover {
+            .projects-img {
+                img {
+                    filter: none;
+                }
+            }
+
+            .projects-content {
+                @include visible;
+            }
+        }
+
         .projects-img {
+            cursor: pointer;
+
             img {
                 width: 100%;
                 height: 100%;
                 max-width: 100%;
                 object-fit: cover;
+                filter: saturate(0%);
+                transition: all .3s ease;
             }
         }
 
         .projects-content {
-            display: none;
+            transition: all .3s ease;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            text-align: right;
+            color: $w-cl;
+            max-width: 370px;
+            @include hidden;
+          
+
+            .projects-date {
+                margin-bottom: 10px;
+                @include lh(14, 12);
+            }
+
+            .projects-tt {
+                @include lh(22, 18);
+                text-transform: uppercase;
+            }
         }
     }
 
     .grid {
         border-radius: 0;
+        // width: 100%;
+        
+        margin: 0 auto;
+    }
+
+    .grid-sizer,
+    .grid-item {
+        width: 17%;
+        max-width: 318px;
     }
 
 
     .grid-item {
-        width: 318px;
-        height: 318px;
+        // width: 318px;
+        height: auto;
         float: left;
         border: none;
         border-radius: 0%;
         background-color: $w-cl;
+        @include max-media($bk-1900) {
+            // width: 300px;
+            // height: 300px;
+        }
+
+
     }
 
 
     .grid-item--width1 {
-        width: 636px;
+        width: 34%;
+        max-width: 636px;
+       
+
+        @include max-media($bk-1900) {
+            // width: 600px;
+        }
+
+        .projects-content {
+            bottom: 40px;
+            right: 40px;
+            @include max-media($bk-1900){
+                bottom: 20px;
+                right: 20px;
+            }
+        }
     }
 
     .grid-item--height1 {
-        height: 636px;
+        // height: 636px;
+        height: auto;
+
+        @include max-media($bk-1900) {
+            // height: 600px;
+        }
     }
 
 

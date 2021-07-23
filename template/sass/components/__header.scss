@@ -13,9 +13,12 @@
         width: 100%;
         box-shadow: 10px 10px 20px rgba($color: $b-cl, $alpha: 0.16);
         animation: fixedMenu 0.6s;
+        @include max-media($bk-d-1200){
+            animation: none;
+        }
     }
 
-    &.--active{
+    &.--active {
         z-index: 992;
     }
 
@@ -40,14 +43,16 @@
 
     &::before {
         left: 80px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             left: 70px;
         }
     }
 
     &::after {
         right: 80px;
-        @include max-media($bk-d-1200){
+
+        @include max-media($bk-d-1200) {
             right: 70px;
         }
     }
@@ -58,7 +63,8 @@
     // background-color: wheat;
     border-bottom: 1px solid $g-EAEA-cl;
     position: relative;
-    &::before{
+
+    &::before {
         content: '';
         background-color: $g-E5E5-cl;
         width: 1px;
@@ -67,7 +73,8 @@
         top: 0;
         left: 50%;
         transform: translateX(-50%);
-        @include max-media($bk-d-992){
+
+        @include max-media($bk-d-992) {
             display: none;
         }
     }
@@ -86,7 +93,8 @@
     // margin-right: 15px;
     max-width: 80px;
     height: 80px;
-    @include  max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         max-width: 70px;
         height: 70px;
     }
@@ -99,58 +107,68 @@
     }
 }
 
-.header-lt{
+.header-lt {
     display: flex;
     align-items: center;
 }
 
-.header-rt{
+.header-rt {
     padding-right: 80px;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         display: flex;
         align-items: center;
         padding-right: 15px;
 
     }
-    .hamburger-btn{
+
+    .hamburger-btn {
         margin-left: 20px;
-        @include max-media($bk-d-768){
+
+        @include max-media($bk-d-768) {
             margin-left: 0;
         }
     }
 }
 
-.header-info{
+.header-info {
     display: flex;
     text-align: right;
     padding-right: 30px;
-    @include max-media($bk-d-1200){
+
+    @include max-media($bk-d-1200) {
         padding-right: 20px;
     }
-    .header-if{
-        &:first-child{
+
+    .header-if {
+        &:first-child {
             margin-right: 30px;
-            @include max-media($bk-d-1200){
+
+            @include max-media($bk-d-1200) {
                 margin-right: 20px;
             }
         }
-        a{
+
+        a {
             transition: all .3s ease;
-            @include lh(22,18);
-            &:hover{
+            @include lh(22, 18);
+
+            &:hover {
                 color: $main-cl;
             }
-            @include max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 display: none;
             }
         }
-        p{
-            @include max-media($bk-d-992){
-               display: none;
+
+        p {
+            @include max-media($bk-d-992) {
+                display: none;
             }
         }
-      
-        .if-icon{
+
+        .if-icon {
             font-size: 14px;
             width: 30px;
             height: 30px;
@@ -160,16 +178,17 @@
             align-items: center;
             justify-content: center;
             color: $w-cl;
-            @include  max-media($bk-d-992){
+
+            @include max-media($bk-d-992) {
                 display: flex;
             }
-            
-            &:hover{
+
+            &:hover {
                 background-color: $b-cl;
                 color: $w-cl;
             }
 
-            
+
         }
     }
 }
@@ -421,7 +440,7 @@
 }
 
 .header-menu {
-    @include min-media($bk-1200){
+    @include min-media($bk-1200) {
         padding-left: 30px;
     }
 
@@ -475,6 +494,7 @@
         overflow-x: hidden;
         overflow-y: auto;
         height: 400px;
+        padding-left: 0;
     }
 
     // li {
@@ -489,7 +509,7 @@
         @include trans(.3s);
         color: rgba($color: $b-cl, $alpha: .6);
 
-       
+
 
         //font-size: 12px;
         @include max-media($bk-d-1200) {
@@ -528,19 +548,27 @@
                     color: $main-cl;
                 }
             }
-        }
-    }
 
-    .current-menu {
-        a {
-            color: $main-cl;
+            &.active {
+                color: $main-cl;
 
-            &::before {
-                width: calc(100% - 24px);
+                &::before {
+                    width: calc(100% - 24px);
+                }
             }
-
         }
     }
+
+    // .current-menu {
+    //     a {
+    //         color: $main-cl;
+
+    //         &::before {
+    //             width: calc(100% - 24px);
+    //         }
+
+    //     }
+    // }
 
     // }
 }
