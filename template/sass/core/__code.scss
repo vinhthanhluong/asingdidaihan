@@ -1,0 +1,133 @@
+.main-cl {
+    color: $main-cl;
+}
+
+.w-cl {
+    color: $w-cl;
+}
+
+.b-cl {
+    color: $b-cl;
+}
+
+.f-light {
+    font-weight: 300;
+}
+
+.f-italic{
+    font-style: italic;
+}
+
+.wrapper {
+    position: relative;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: $g-E5E5-cl;
+        z-index: 898;
+
+        @include max-media($bk-1400) {
+            display: none;
+        }
+    }
+
+    &::before {
+        left: 80px;
+        // @include max-media($bk-d-1200){
+        //     left: 70px;
+        // }
+    }
+
+    &::after {
+        right: 80px;
+        // @include max-media($bk-d-1200){
+        //     right: 70px;
+        // }
+    }
+}
+
+.line-mid {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background-color: $g-E5E5-cl;
+    z-index: 898;
+    @include max-media($bk-d-992){
+        display: none;
+    }
+
+}
+
+.fix-social {
+    position: fixed;
+    top: 230px;
+    right: 30px;
+    display: flex;
+    transform: rotate(-90deg);
+    transform-origin: right;
+    @include max-media($bk-d-1200){
+        right: 15px;
+    }
+    @include max-media($bk-d-992){
+        right: 25px;
+    }
+
+    @include max-media($bk-d-768) {
+        top: 150px;
+    }
+
+    .fix-text {
+        &:not(:first-child) {
+            margin-left: 30px;
+            @include max-media($bk-d-992){
+                margin-left: 20px;
+            }
+        }
+
+        a {
+            color: rgba($color: $b-cl, $alpha: .6);
+            transition: all .3s ease;
+            display: inline-block;
+
+            &:hover {
+                color: $main-cl;
+            }
+
+            @include max-media($bk-d-992) {
+                font-size: 0;
+            }
+        }
+
+        .fix-icon {
+            font-size: 14px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba($color: $b-cl, $alpha: .6);
+            border-radius: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transform: rotate(90deg);
+            transition: all .3s ease;
+            color: $w-cl;
+
+            &:hover {
+
+                background-color: $main-cl;
+            }
+
+            @include max-media($bk-d-992) {
+                display: flex;
+            }
+
+        }
+    }
+}

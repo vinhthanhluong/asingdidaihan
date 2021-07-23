@@ -1,0 +1,203 @@
+.footer {
+    background-color: $bg-w-cl;
+    margin-top: auto;
+    text-align: center;
+    // overflow: hidden;
+    position: relative;
+
+    &::after {
+        content: '';
+        background-image: url('../img/bg-ft.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom right;
+        width: 1280px;
+        height: 765px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @include max-media($bk-1400) {
+            width: 900px;
+        }
+
+        @include max-media($bk-d-1200) {
+            width: 700px;
+        }
+
+        @include max-media($bk-d-1024) {
+            width: 550px;
+        }
+
+        @include max-media($bk-d-768) {
+            display: none;
+        }
+    }
+
+
+    .footer-top {
+        margin-bottom: -35px;
+
+        .footer-wrapper {
+            max-width: 330px;
+            margin: 0 auto;
+            z-index: 903;
+            position: relative;
+            @include max-media($bk-d-768){
+                max-width: 200px;
+            }
+        }
+    }
+
+    .ft-avatar {
+        margin-bottom: 30px;
+
+        @include max-media($bk-d-1024) {
+            margin-bottom: 20px;
+        }
+
+        @include max-media($bk-d-768) {
+            margin-bottom: 10px;
+        }
+
+        img {
+            // width: 100%;
+            // height: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            margin: 0 auto;
+           
+        }
+    }
+
+    .ft-hotline {
+        background-color: $w-cl;
+        border: 1px solid $g-E5E5-cl;
+        padding: 14px 60px;
+
+        @include max-media($bk-d-768) {
+            padding: 10px;
+        }
+
+    }
+
+    .footer-bottom {
+        border-top: 1px solid $g-E5E5-cl;
+        padding: 65px 0 100px;
+
+        @include max-media($bk-d-992) {
+            padding: 50px 0 70px;
+        }
+
+        @include max-media($bk-d-768) {
+            padding: 50px 0 30px;
+        }
+
+
+    }
+
+    .ft-list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -15px;
+        position: relative;
+        z-index: 902;
+        flex-wrap: wrap;
+
+        @include max-media($bk-d-1200) {
+            margin: -10px;
+        }
+
+        @include max-media($bk-d-768) {
+            margin: -5px;
+        }
+
+        .ft-item {
+            padding: 15px;
+
+            @include max-media($bk-d-1200) {
+                padding: 10px;
+            }
+
+            @include max-media($bk-d-992) {
+                width: 50%;
+                display: inline-flex;
+            }
+
+            @include max-media($bk-d-768) {
+                padding: 5px;
+            }
+
+            &:hover {
+                .ft-social {
+                    color: $main-cl;
+                }
+
+                .ft-icon {
+                    color: $w-cl;
+                    background-color: $main-cl;
+                    border-color: $main-cl;
+                }
+
+                .ft-link {
+                    color: $w-cl;
+                    background-color: $main-cl;
+                    border-color: $main-cl;
+                }
+            }
+
+            .ft-social {
+                display: flex;
+                align-items: center;
+                transition: all .3s ease;
+
+                @include max-media($bk-400) {
+                    font-size: 12px;
+                }
+
+            }
+
+            .ft-icon {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                border: 1px solid $g-E5E5-cl;
+                background-color: $w-cl;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-right: 10px;
+                transition: all .3s ease;
+
+                @include max-media($bk-400) {
+                    font-size: 17px;
+                }
+            }
+
+            .ft-link {
+                border-radius: 100px;
+                border: 1px solid $g-E5E5-cl;
+                padding: 10px 15px;
+                transition: all .3S ease;
+
+                @include max-media($bk-576) {
+                    padding: 10px;
+                }
+
+                @include max-media($bk-400) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .copy-right {
+        margin-top: 30px;
+
+        @include max-media($bk-d-768) {
+            // margin-top: 20px;
+        }
+
+    }
+}
