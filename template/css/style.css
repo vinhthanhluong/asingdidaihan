@@ -3794,6 +3794,31 @@ html .mfp-wrap {
   width: 100%;
   height: 100%;
 }
+.achievements .achi-slide .achi-video video {
+  width: 100%;
+  height: 660px;
+  object-fit: cover;
+}
+@media screen and (max-width: 1400px) {
+  .achievements .achi-slide .achi-video video {
+    height: 500px;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .achievements .achi-slide .achi-video video {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .achievements .achi-slide .achi-video video {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .achievements .achi-slide .achi-video video {
+    height: 250px;
+  }
+}
 .achievements .achi-slide .achi-video iframe {
   width: 100%;
   height: 660px;

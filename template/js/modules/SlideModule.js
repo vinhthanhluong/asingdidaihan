@@ -1,4 +1,17 @@
-export default function SlideModule(){
+export default function SlideModule() {
+
+    // var stopVideo = function ( element ) {
+    //     var iframe = $('.youtube');
+    //     // var video = $('video');
+    //     if ( iframe ) {
+    //         var iframeSrc = iframe.src;
+    //         iframe.src = iframeSrc;
+    //     }
+    //     if ( video ) {
+    //         video.pause();
+    //     }
+    // };
+
     function slideCenter() {
         if (document.querySelector('.slide-center')) {
             const swiper = document.querySelector('.slide-center');
@@ -9,23 +22,9 @@ export default function SlideModule(){
             try {
                 const swiper = new Swiper(sliderContainer, {
                     speed: 1000,
-                    loop: true,
+                    // loop: true,
                     slidesPerView: 1,
-                    // centeredSlides : true,
-                    // autoHeight: true,
                     spaceBetween: 30,
-                    // autoplay: {
-                    //     delay: 4000,
-                    // },
-                    // pagination: {
-                    //     el: '.swiper-pagination',
-                    //     clickable: true,
-                    // },
-
-                    // navigation: {
-                    //     nextEl: '.swiper-button-next',
-                    //     prevEl: '.swiper-button-prev',
-                    // },
 
                     breakpoints: {
                         320: {
@@ -39,10 +38,7 @@ export default function SlideModule(){
 
                         }
                     }
-                    // observeParents:true,
-                    // observeSlideChildren: true,
-                    // observer: true,
-                })
+                });
             }
             catch (err) {
                 console.log(err)
@@ -63,36 +59,36 @@ export default function SlideModule(){
         try {
             const swiper = new Swiper(sliderContainer, {
                 speed: 1000,
-                    loop: true,
-                    spaceBetween: 20,
-                    // autoplay: {
-                    //     delay: 4000,
-                    // },
-                    // pagination: {
-                    //     el: '.swiper-pagination',
-                    //     clickable: true,
-                    // },
+                loop: true,
+                spaceBetween: 20,
+                // autoplay: {
+                //     delay: 4000,
+                // },
+                // pagination: {
+                //     el: '.swiper-pagination',
+                //     clickable: true,
+                // },
 
-                    // navigation: {
-                    //     nextEl: '.swiper-button-next',
-                    //     prevEl: '.swiper-button-prev',
+                // navigation: {
+                //     nextEl: '.swiper-button-next',
+                //     prevEl: '.swiper-button-prev',
+                // },
+
+                breakpoints: {
+                    // 320: {
+                    //     spaceBetween: 50
                     // },
+                    // 480: {
+                    //     spaceBetween: 30
+                    // },
+                    // 576: {
+                    //     spaceBetween: 0,
 
-                    breakpoints: {
-                        // 320: {
-                        //     spaceBetween: 50
-                        // },
-                        // 480: {
-                        //     spaceBetween: 30
-                        // },
-                        // 576: {
-                        //     spaceBetween: 0,
-
-                        // }
-                    }
-                    // observeParents:true,
-                    // observeSlideChildren: true,
-                    // observer: true,
+                    // }
+                }
+                // observeParents:true,
+                // observeSlideChildren: true,
+                // observer: true,
             })
         }
         catch (err) {
