@@ -131,3 +131,24 @@
         }
     }
 }
+
+.animate-delay-200{
+    animation-delay: .2s;
+}
+.animate-delay-400{
+    animation-delay: .4s;
+}
+.animate-delay-600{
+    animation-delay: .7s;
+}
+
+.wow {
+    animation-duration: 1s;
+
+    @include max-media($bk-d-768) {
+        visibility: visible !important;
+        -webkit-animation-name: none !important;
+        -o-animation-name: none !important;
+        animation-name: none !important;
+    }
+}
