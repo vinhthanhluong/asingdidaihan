@@ -26,39 +26,14 @@ export default function SlideModule() {
 
                         }
                     },
-
-                    // onSlideChangeStart: function (swiper) {
-                    //     $('.swiper-slide').find('.youtube-video').each(function () {
-                    //         this.pause();
-                    //     });
-                    // },
-
-                    // onSlideChangeEnd: function (swiper) {
-                    //     $('.swiper-slide').find('.youtube-video').each(function () {
-                    //         this.pause();
-                    //     });
-                    // },
                 });
                 swiper.slideTo(1);
 
-                // var vid = document.getElementsByClassName("youtube-video");
-
-                // function pauseVid() {
-                //     vid.pause();
-                // }
-
-                // if ($('.achi-wrap').length) {
-                //     swiper.on('slideChange', function () {
-                //         console.log('slide changed');
-
-                //         $('.youtube-video').pause();
-                //         // pauseVid();
-                //     });
-                // }
-
-                // console.log(pauseVid);
-
-
+                swiper.on('slideChangeTransitionStart', function () {
+                    if (swiper.el.querySelector('.swiper-slide-active video')) {
+                        swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
+                    }
+                });
 
             }
             catch (err) {
