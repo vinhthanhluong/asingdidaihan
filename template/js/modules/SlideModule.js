@@ -1,17 +1,5 @@
 export default function SlideModule() {
 
-    // var stopVideo = function ( element ) {
-    //     var iframe = $('.youtube');
-    //     // var video = $('video');
-    //     if ( iframe ) {
-    //         var iframeSrc = iframe.src;
-    //         iframe.src = iframeSrc;
-    //     }
-    //     if ( video ) {
-    //         video.pause();
-    //     }
-    // };
-
     function slideCenter() {
         if (document.querySelector('.slide-center')) {
             const swiper = document.querySelector('.slide-center');
@@ -37,8 +25,41 @@ export default function SlideModule() {
                             spaceBetween: 30,
 
                         }
-                    }
+                    },
+
+                    // onSlideChangeStart: function (swiper) {
+                    //     $('.swiper-slide').find('.youtube-video').each(function () {
+                    //         this.pause();
+                    //     });
+                    // },
+
+                    // onSlideChangeEnd: function (swiper) {
+                    //     $('.swiper-slide').find('.youtube-video').each(function () {
+                    //         this.pause();
+                    //     });
+                    // },
                 });
+                swiper.slideTo(1);
+
+                // var vid = document.getElementsByClassName("youtube-video");
+
+                // function pauseVid() {
+                //     vid.pause();
+                // }
+
+                // if ($('.achi-wrap').length) {
+                //     swiper.on('slideChange', function () {
+                //         console.log('slide changed');
+
+                //         $('.youtube-video').pause();
+                //         // pauseVid();
+                //     });
+                // }
+
+                // console.log(pauseVid);
+
+
+
             }
             catch (err) {
                 console.log(err)

@@ -595,7 +595,8 @@
             video{
                 width: 100%;
                 height: 660px;
-                object-fit: cover;
+                // object-fit: cover;
+                object-fit: fill;
                 @include max-media($bk-1400) {
                     height: 500px;
                 }
