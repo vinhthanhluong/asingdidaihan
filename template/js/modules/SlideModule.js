@@ -29,11 +29,11 @@ export default function SlideModule() {
                 });
                 swiper.slideTo(1);
 
-                swiper.on('slideChangeTransitionStart', function () {
-                    if (swiper.el.querySelector('.swiper-slide-active video')) {
-                        swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
-                    }
-                });
+                // swiper.on('slideChangeTransitionStart', function () {
+                //     if (swiper.el.querySelector('.swiper-slide-active video')) {
+                //         swiper.el.querySelectorAll('.swiper-slide video').forEach((x) => x.pause());
+                //     }
+                // });
 
             }
             catch (err) {

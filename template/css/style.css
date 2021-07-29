@@ -5,8 +5,9 @@
 @import url(../js/libs/popup/magnific-popup.css);
 @import url(../js/libs/lightgallery/lightgallery.css);
 @import url(../font/font-awesome-4.7.0/css/font-awesome.min.css);
-@import url(../js/libs/masonry/css/masonry-docs.css);
 @import url(../js/libs/wow/wow.css);
+@import url(../js/libs/masonrys/css/masonry-docs.css);
+@import url(../js/libs/media/css/mediaelementplayer.min.css);
 /*width*/
 .mona-content strong,
 .mona-content b {
@@ -725,6 +726,7 @@ sup {
   display: flex;
   transform: rotate(-90deg);
   transform-origin: right;
+  z-index: 993;
 }
 @media screen and (max-width: 1199px) {
   .fix-social {
@@ -3484,6 +3486,16 @@ html .mfp-wrap {
   border-radius: 0%;
   background-color: #fff;
 }
+@media screen and (min-width: 992px) and (max-width: 1900px) {
+  .projects .grid-item:nth-child(12) {
+    left: 19.9984% !important;
+  }
+}
+@media screen and (min-width: 992px) and (max-width: 1900px) {
+  .projects .grid-item:nth-child(11) {
+    left: 0 !important;
+  }
+}
 .projects .grid-item--width1 {
   width: 34%;
   max-width: 636px;
@@ -3794,55 +3806,36 @@ html .mfp-wrap {
   width: 100%;
   height: 100%;
 }
-.achievements .achi-slide .achi-video video {
-  width: 100%;
-  height: 660px;
-  object-fit: fill;
+.achievements .achi-slide .achi-video .mejs__container {
+  width: 100% !important;
 }
 @media screen and (max-width: 1400px) {
-  .achievements .achi-slide .achi-video video {
-    height: 500px;
+  .achievements .achi-slide .achi-video .mejs__container {
+    height: 500px !important;
   }
 }
 @media screen and (max-width: 1199px) {
-  .achievements .achi-slide .achi-video video {
-    height: 400px;
+  .achievements .achi-slide .achi-video .mejs__container {
+    height: 400px !important;
   }
 }
 @media screen and (max-width: 767px) {
-  .achievements .achi-slide .achi-video video {
-    height: 300px;
+  .achievements .achi-slide .achi-video .mejs__container {
+    height: 300px !important;
   }
 }
 @media screen and (max-width: 576px) {
-  .achievements .achi-slide .achi-video video {
-    height: 250px;
+  .achievements .achi-slide .achi-video .mejs__container {
+    height: 250px !important;
   }
+}
+.achievements .achi-slide .achi-video .mejs__container .mejs__layer {
+  width: 100% !important;
 }
 .achievements .achi-slide .achi-video iframe {
   width: 100%;
-  height: 660px;
+  height: 100%;
   object-fit: cover;
-}
-@media screen and (max-width: 1400px) {
-  .achievements .achi-slide .achi-video iframe {
-    height: 500px;
-  }
-}
-@media screen and (max-width: 1199px) {
-  .achievements .achi-slide .achi-video iframe {
-    height: 400px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .achievements .achi-slide .achi-video iframe {
-    height: 300px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .achievements .achi-slide .achi-video iframe {
-    height: 250px;
-  }
 }
 .achievements .achi-slide .achi-content {
   margin-top: 20px;

@@ -276,6 +276,26 @@
         background-color: $w-cl;
 
 
+        &:nth-child(12){
+            @include min-media($bk-992){
+                // left: 39.9984% !important;
+            }
+            @media screen and(min-width: 992px) and (max-width: 1900px) {
+                // left: 0% !important;
+                left: 19.9984% !important;
+            }
+        }
+
+        &:nth-child(11){
+            @include min-media($bk-992){
+                // left: 0% !important;
+            }
+
+            @media screen and(min-width: 992px) and (max-width: 1900px) {
+                left: 0 !important;
+            }
+        }
+        
 
     }
 
@@ -592,50 +612,75 @@
         .achi-video {
             width: 100%;
             height: 100%;
-            video{
-                width: 100%;
-                height: 660px;
-                // object-fit: cover;
-                object-fit: fill;
+            .mejs__container{
+                width: 100% !important;
                 @include max-media($bk-1400) {
-                    height: 500px;
+                    height: 500px !important;
                 }
 
                 @include max-media($bk-d-1200) {
-                    height: 400px;
+                    height: 400px !important;
                 }
 
                 @include max-media($bk-d-768) {
-                    height: 300px;
+                    height: 300px !important;
                 }
 
                 @include max-media($bk-576) {
-                    height: 250px;
+                    height: 250px !important;
                 }
-                
+
+                .mejs__layer{
+                    width: 100% !important; 
+                }
             }
 
             iframe {
                 width: 100%;
-                height: 660px;
+                height: 100%;
                 object-fit: cover;
-
-                @include max-media($bk-1400) {
-                    height: 500px;
-                }
-
-                @include max-media($bk-d-1200) {
-                    height: 400px;
-                }
-
-                @include max-media($bk-d-768) {
-                    height: 300px;
-                }
-
-                @include max-media($bk-576) {
-                    height: 250px;
-                }
             }
+
+            // .mejs__container , iframe{
+            //     @include max-media($bk-1400) {
+            //         height: 500px !important;
+            //     }
+
+            //     @include max-media($bk-d-1200) {
+            //         height: 400px !important;
+            //     }
+
+            //     @include max-media($bk-d-768) {
+            //         height: 300px !important;
+            //     }
+
+            //     @include max-media($bk-576) {
+            //         height: 250px !important;
+            //     }
+            // }
+
+
+            // video{
+            //     width: 100%;
+            //     object-fit: cover;
+            //     @include max-media($bk-1400) {
+            //         height: 500px;
+            //     }
+
+            //     @include max-media($bk-d-1200) {
+            //         height: 400px;
+            //     }
+
+            //     @include max-media($bk-d-768) {
+            //         height: 300px;
+            //     }
+
+            //     @include max-media($bk-576) {
+            //         height: 250px;
+            //     }
+            // }
+
+           
         }
 
         .achi-content {
